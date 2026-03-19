@@ -10,12 +10,143 @@
 
 */
 
+/*PAGE*/
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main_font), sans-serif;
+  font-family: var(--main_font);
   font-variation-settings: 'wght' var(--text_font_weight);
   background-image: var(--background_gradient_to_right), var(--background_gradient_to_bottom), var(--background_gradient_to_bottom_main);
   background-repeat: no-repeat;
   background-size: cover;
+  font-size: 14px;
 }
+
+.container{
+  inline-size: clamp(375px, 50% , 700px);
+  background-color: #fff;
+  border: 2px solid #000;
+  justify-self: center;
+}
+
+/*HEADER*/
+
+header {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: clamp(98px, 100.7042px + -0.1878vw, 100px);
+  
+}
+
+.header_content{
+  margin: clamp(122px, 119.1831px + 0.7512vw, 130px) clamp(16px, -21.5px - 10vw, 122.5px);
+  text-align: center;
+  font-family: var(--accent_font);
+}
+
+.header_title {
+  font-size: clamp(49px, 43.3662px + 1.5023vw, 65px);
+  letter-spacing: 0;
+  vertical-align: bottom;
+  margin-bottom: 20px;
+}
+
+.header_text{
+  font-size: clamp(14px, 10.831px + 0.8451vw, 23px);
+  letter-spacing: 0;
+  vertical-align: top;
+}
+
+/*MAIN*/
+
+
+.card_title{
+  font-size: 18px;
+  font-variation-settings:  "wght" 715;
+  margin: 4px 10px;
+  vertical-align: middle;
+  letter-spacing: 0;
+  
+}
+
+.image_container {
+  position: relative;
+}
+
+.card_image{
+  display: block;
+  width: 100%;
+}
+
+.image_label{
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 14px;
+  font-family: var(--accent_font);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  vertical-align: middle;
+  text-shadow: 0 0 1px var(--label_text_stroke_color), 0 4px 4px rgba(0, 0,0, 0.25);
+  font-variation-settings:  "wght" 400;
+}
+
+@supports (-webkit-text-stroke: 1px #fff){
+  .image_label{
+    -webkit-text-stroke: 1px var(--label_text_stroke_color);
+    text-shadow: 0 4px 4px rgba(0, 0,0, 0.25);
+  }
+}
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.card_text {
+  margin: 0 25px;
+  font-size: 18px;
+  font-variation-settings: "wght" 410;
+}
+
+.card_buttons_container {
+  margin: 25px 25px 25px auto;
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+}
+
+.card__icon-button {
+  background-color: initial;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__like-button{
+  background-color: initial;
+  width: 130px;
+  height: 38px;
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__text{
+  font-family: var(--accent_font);
+  font-variation-settings: "wght" 410;
+  line-height: 0.9;
+  letter-spacing: 0;
+  vertical-align: top;
+}
+
+
