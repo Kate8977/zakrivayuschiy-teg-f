@@ -295,7 +295,6 @@ dialog::backdrop {
   filter: sepia(50%);
 }
 
-/* Множественный фильтр (сочетание яркости и контрастности) */
 .filter-quality {
   filter: contrast(1.1) brightness(1.05) saturate(1.2) blur(0.3px);
 }
