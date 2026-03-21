@@ -12,23 +12,21 @@
 
 /*ANIMATIONS*/
 @keyframes increase {
-  from{
+  from {
     scale: 1;
   }
 
-  to{
+  to {
     scale: 1.25;
   }
 }
 
 @keyframes filling {
-  from{
+  from {
     opacity: 0;
   }
 
-  to{
+  to {
     opacity: 1;
   }
 }
-
-
