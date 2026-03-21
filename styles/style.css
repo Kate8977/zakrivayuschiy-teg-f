@@ -279,10 +279,6 @@ dialog::backdrop {
   filter: contrast(150%);
 }
 
-.filter-grayscale {
-  filter: grayscale(100%);
-}
-
 .filter-hue-rotate {
   filter: hue-rotate(90deg);
 }
