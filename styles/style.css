@@ -15,9 +15,7 @@
 .page {
   font-family: var(--main_font);
   font-size: 14px;
-  background-image:
-    var(--background_gradient_to_right), var(--background_gradient_to_bottom),
-    var(--background_gradient_to_bottom_main);
+  background-image: var(--background_gradient);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -37,6 +35,7 @@
 
 header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 100px;
@@ -51,17 +50,17 @@ header {
   text-align: center;
 }
 
-.header_title {
-  margin-bottom: 20px;
+.header_logo {
   font-size: clamp(49px, 43.3662px + 1.5023vw, 65px);
-  line-height: auto;
+  line-height: normal;
   letter-spacing: 0;
 }
 
-.header_text {
+.header_title {
+  margin-top: 20px;
   font-weight: 400;
   font-size: clamp(14px, calc(0.85vw + 10.83px), 23px);
-  line-height: auto;
+  line-height: normal;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -78,7 +77,7 @@ header {
 .card_title {
   margin: 4px 10px;
   font-size: 18px;
-  line-height: auto;
+  line-height: normal;
   letter-spacing: 0;
   font-variation-settings: "wght" 715;
 }
@@ -92,7 +91,7 @@ header {
 .card_image {
   display: block;
   width: 100%;
-  height: var(--image_height);
+  min-height: var(--image_height);
   object-fit: cover;
 }
 
@@ -103,6 +102,7 @@ header {
   opacity: 0.5;
   font-family: var(--accent_font);
   font-size: 14px;
+  text-transform: uppercase;
   text-shadow:
     0 0 1px var(--label_text_stroke_color),
     0 4px 4px rgba(0, 0, 0, 0.25);
@@ -112,7 +112,7 @@ header {
 
 @supports (-webkit-text-stroke: 1px #fff) {
   .image_label {
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: none;
     -webkit-text-stroke: 1px var(--label_text_stroke_color);
   }
 }
@@ -151,18 +151,22 @@ header {
   transition: border 0.3s ease;
 }
 
-.card__like-button {
+.button {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 130px;
-  height: 38px;
   border: 2px solid #000;
-  padding: 0;
   overflow: hidden;
   background-color: #fff;
+  transition: box-shadow 0.3s ease;
   cursor: pointer;
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  padding: 0;
 }
 
 .button__text {
@@ -177,32 +181,24 @@ header {
   mix-blend-mode: difference;
 }
 
-/*FOOTER*/
+/*SAVE_BLOCK*/
 
-.footer {
+.save_block {
   display: flex;
   justify-content: center;
-  margin-bottom: var(--footer_margin_bottom);
+  margin-bottom: 100px;
   border: none;
   background-color: inherit;
 }
 
 .save_button {
-  position: relative;
-  display: flex;
   flex-direction: var(--save_button_content_direction);
-  justify-content: center;
-  align-items: center;
   gap: 8px;
   margin-top: 50px;
-  border: 2px solid #000;
   padding: 17px 20px;
-  overflow: hidden;
-  background-color: #fff;
-  cursor: pointer;
 }
 
-.footer .floppy {
+.save_block .floppy {
   position: relative;
   z-index: 2;
   color: #fff;
@@ -220,8 +216,8 @@ header {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  max-height: 191px;
   padding: var(--dialog_padding);
-  block-size: 191px;
   inline-size: var(--dialog_inline_size);
 }
 
@@ -242,15 +238,7 @@ header {
 }
 
 .dialog_button {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #000;
-  overflow: hidden;
   text-transform: uppercase;
-  background-color: inherit;
-  cursor: pointer;
   block-size: 38px;
 }
 
@@ -297,23 +285,13 @@ dialog::backdrop {
 
 /*EFFECTS BUTTONS*/
 
-.card__like-button,
-.save_button,
-.dialog_button {
-  transition: box-shadow 0.3s ease;
-}
-
-.card__like-button:focus,
-.save_button:focus,
-.dialog_button:focus {
+.button:focus {
   border-radius: 0;
   box-shadow: 2px 2px 0 0 var(--accent_color);
   outline: none;
 }
 
-.card__like-button::before,
-.save_button::before,
-.dialog_button::before {
+.button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -324,9 +302,7 @@ dialog::backdrop {
   transform-origin: left center;
 }
 
-.card__like-button:hover::before,
-.save_button:hover::before,
-.dialog_button:hover::before {
+.button:hover::before {
   transform: scaleX(1);
 }
 

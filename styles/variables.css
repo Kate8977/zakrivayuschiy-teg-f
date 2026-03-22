@@ -2,28 +2,13 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   --main_font: "Inter-Variable", sans-serif;
-  --accent_font: "PressStart2P-Regular", sans-serif;
+  --accent_font: "PressStart2P", fantasy;
   --title_font_weight: 715;
   --text_font_weight: 410;
-  --background_gradient_to_right: repeating-linear-gradient(
-    to right,
-    #d3d3d3 2px,
-    transparent 2px
-  );
-  --background_gradient_to_bottom: repeating-linear-gradient(
-    to bottom,
-    #d3d3d3 2px,
-    transparent 2px
-  );
-  --background_gradient_to_bottom_main: repeating-linear-gradient(
-    to bottom,
-    #e7e7e7,
-    #1a1a1a
-  );
+  --background_gradient: repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
   --label_text_stroke_color: #fff;
   --save_button_content_direction: column;
   --floppy_size: 28px;
-  --footer_margin_bottom: 100px;
   --dialog_padding: 30px 40px;
   --dialog_inline_size: 341px;
   --accent_color: #000;
@@ -37,7 +22,6 @@
   :root {
     --save_button_content_direction: row;
     --floppy_size: 21px;
-    --footer_margin_bottom: 0;
     --dialog_padding: 30px;
     --dialog_inline_size: 353px;
     --image_height: 696px;
