@@ -216,7 +216,6 @@ header {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-height: 191px;
   padding: var(--dialog_padding);
   inline-size: var(--dialog_inline_size);
 }
